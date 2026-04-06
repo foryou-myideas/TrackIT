@@ -44,7 +44,8 @@ def list_page(list_name):
     with open(file_name) as f:
         data = json.load(f)
 
-    return render_template('status.html',tbr_books=data[key_name],list_name=display_name,list_key=key_name, show_list=True, show_delete=False)
+    sorted_list = sorted(data[key_name], key=lambda x: x['title'])
+    return render_template('status.html',tbr_books=sorted_list,list_name=display_name,list_key=key_name, show_list=True, show_delete=False)
 
 # taking user input from search box for all lists
 @app.route('/handle-action/<list_name>', methods=['POST'])
