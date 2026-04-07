@@ -11,13 +11,13 @@
     </head>
     <body>
         <div class="heading">
-            <p><b>Wel</b>come~<br>Your one stop to <b>track all your hobbies!</b></p>
+            <p><b>Wel</b>come {{ user_name }}~<br>Your one stop to <b>track all your hobbies!</b></p>
         </div>
         <div class="buttons">
-            <a href="{{ url_for('tbr') }}" id="to-read">🕮 To Read</a>
-            <a href="{{ url_for('to_watch') }}" id="to-watch">🎞 To Watch</a>
-            <a href="{{ url_for('read') }}" id="read">☑ Read</a>
-            <a href="{{ url_for('watched') }}" id="watched">📽 Watched</a> 
+            <a href="{{ url_for('tbr', user_name=user_name) }}" id="to-read">🕮 To Read</a>
+            <a href="{{ url_for('to_watch', user_name=user_name) }}" id="to-watch">🎞 To Watch</a>
+            <a href="{{ url_for('read', user_name=user_name) }}" id="read">☑ Read</a>
+            <a href="{{ url_for('watched', user_name=user_name) }}" id="watched">📽 Watched</a> 
         </div>
     </body>
 </html>

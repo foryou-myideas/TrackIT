@@ -4,17 +4,21 @@ html{
     padding: 1rem 1rem;
 }
 
-.start-button{
+#username-form{
     display: flex;
     flex-direction: column; 
     justify-content: center;
     align-items: center;
-    margin-top: 14rem;
+    gap: 1rem;
+    margin-top: 12rem;
+}
+#enter_name{
+    width: 30rem;
+    height: 2.5rem;
 }
 #start-button{
     background-color: #283845;
     border-radius: 3rem;
-    padding: 1.5rem 4rem;
 
     font-family: "Lilita One", sans-serif;
     font-weight: 400;
@@ -22,7 +26,8 @@ html{
 
     text-decoration: none;
     color: #F2D492;
-    font-size: 2rem;
+    font-size: 1.2rem;
+    height: 2.5rem;
 }
 #start-button:hover, button:hover,.footer:hover,#to-read:hover,#to-watch:hover,#read:hover,#watched:hover,#delete_button:hover{
     transform: translateY(-3px);
@@ -105,6 +110,7 @@ b{
     gap: 1rem;
 }
 input[type='text']{
+    text-transform: capitalize;
     text-align: center;
     border: 0.001rem solid #283845;
     border-radius: 2rem;

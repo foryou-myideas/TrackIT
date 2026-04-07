@@ -10,13 +10,15 @@
         <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
-        <a href="{{ url_for('home_page') }}" id="back-button">↩</a>
+        <a href="{{ url_for('home_page', user_name=user_name) }}" id="back-button">↩</a>
         <div class="home-search">
             <div class="heading">
                 <p>All your <b> Watched Series/Movies</b> are here</p>
             </div>
 
             <form method="POST" action="/handle-action/watched" class="search-form">
+                <input type="hidden" name="user_name" value="{{ user_name }}">
+                
                 <input type="text" name="title" placeholder="Enter series/movie name...">
                 <input type="text" name="author" placeholder="Enter director name...">
                 
@@ -26,7 +28,7 @@
                 </div>
             </form>
 
-            <a href="/list_page/watched" id="see-list-button">☰ See List</a>
+            <a href="{{ url_for('list_page', list_name='watched', user_name=user_name) }}" id="see-list-button">☰ See List</a>
         </div>
     </body>
 </html>

@@ -10,9 +10,9 @@
         <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
-        <div class="start-button">
-            <a href="{{ url_for('home_page') }}" id="start-button">CLICK TO ENTER</a>
-        </div>
-        
+        <form id="username-form" action="{{ url_for('home_page') }}" method="GET">
+            <input type="text" name="user_name" id="enter_name" placeholder="Enter your name..."> 
+            <button id="start-button">CLICK TO ENTER</button>
+        </form>
     </body>
 </html>

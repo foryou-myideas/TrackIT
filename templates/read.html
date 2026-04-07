@@ -10,13 +10,15 @@
         <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
-        <a href="{{ url_for('home_page') }}" id="back-button">↩</a>
+        <a href="{{ url_for('home_page', user_name=user_name) }}" id="back-button">↩</a>
         <div class="home-search">
             <div class="heading">
                 <p>All your <b> Read Books</b> are here</p>
             </div>
 
             <form method="POST" action="/handle-action/read" class="search-form">
+                <input type="hidden" name="user_name" value="{{ user_name }}">
+
                 <input type="text" name="title" placeholder="Enter book name...">
                 <input type="text" name="author" placeholder="Enter author name...">
                 
@@ -26,7 +28,7 @@
                 </div>
             </form>
 
-            <a href="/list_page/read" id="see-list-button">☰ See List</a>
+            <a href="{{ url_for('list_page', list_name='read', user_name=user_name) }}" id="see-list-button">☰ See List</a>
         </div>
     </body>
 </html>

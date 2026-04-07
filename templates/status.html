@@ -10,12 +10,14 @@
         <link rel="stylesheet" href="../static/styles.css">
     </head>
     <body>
-        <a href="{{ url_for(list_key) }}" id="back-button">↩</a>
+        <a href="{{ url_for(key_name, user_name=user_name) }}" id="back-button">↩</a>
         <h1>{{ message }}</h1>
 
         {% if show_delete %}
             {% for item in matches %}
-                <form action="/delete/{{ list_key }}" method="POST" class="search-results">
+                <form action="/delete/{{ key_name }}" method="POST" class="search-results">
+                    <input type="hidden" name="user_name" value="{{ user_name }}">
+                    
                     <input type="hidden" name="title" value="{{ item.title }}">
                     <input type="hidden" name="author" value="{{ item.author }}">
                     {% if item.author %}
@@ -34,7 +36,7 @@
 
         {% if show_list %}
         <div class="lists">
-            <h1>Your {{ list_name }} List</h1>
+            <h1>Your {{ display_name }} List</h1>
             <ul>
                 {% for book in tbr_books %}
                     {% if book.author %}

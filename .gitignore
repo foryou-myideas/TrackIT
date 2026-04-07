@@ -22,3 +22,5 @@ Thumbs.db
 # Flask stuff
 instance/
 .webassets-cache
+
+storage.db
