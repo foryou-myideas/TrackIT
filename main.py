@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # opening database
 def get_db():
-    return psycopg2.connect(os.environ.get("DATABASE_URL"))
+    return psycopg2.connect(os.environ["DATABASE_URL"])
 
 # setting up SQLite database to store user data
 def db_setup():
