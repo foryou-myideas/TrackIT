@@ -1,56 +1,35 @@
 # TrackIt Web App
 
-A simple multi-user web app to track your books and shows — built using **Flask + SQLite**.
-
----
+A Flask web app to track books, movies, and shows in lists: TBR, To Watch, Read, Watched. Data is stored in a Supabase PostgreSQL database.
 
 ## Features
-
-*  Track **To Read / Read** books
-*  Track **To Watch / Watched** shows & movies
-*  Multi-user support (no login, just enter your name)
-*  Search items in your lists
-*  Add new items
-*  Delete items
-*  View sorted lists
+- Add, search, and delete items in your lists
+- Multiple users supported
+- Persistent cloud database via Supabase
+- Deployed on Render
 
 ---
 
 ## Tech Stack
 
 * **Backend:** Flask (Python)
-* **Database:** SQLite
+* **Database:** Supabase PostgreSQL
 * **Frontend:** HTML, CSS
 * **Deployment:** Render
 
 ---
 
-## 🧠 How it works
-
-* Users enter their name on entry
-* Data is stored with a `user_name` field
-* All users share one database but see only their own data
-* Lists are separated using `list_name`:
-
-  * `tbr`
-  * `to_watch`
-  * `read`
-  * `watched`
+## How It Works
+- Users enter their name to access personal lists.
+- Items can be added, searched, or deleted in each list: TBR, To Watch, Read, Watched.
+- All data is stored in a Supabase PostgreSQL database, ensuring persistence across sessions.
+- The app retrieves and displays data sorted by title for easy browsing.
 
 ---
 
 ## Deployment
 
 Deployed using Render.
-
----
-
-## Future Improvements
-
-* Persistent cloud database (Supabase/PostgreSQL)
-* User authentication (optional)
-* Edit/update items
-* Better UI/UX
 
 ---
 
